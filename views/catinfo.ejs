@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/catsinfo.css" type="text/css"/>
+</head>
+<body>
+    <% if( found ){ %>
+        <h1>
+            Details page for: <%= cat.name %> 
+        </h1>
+
+        <img src="/images/<%= cat.picture %>" alt="Cat picture" style="width: 400px;">
+
+        <h1>
+            Favorite food: <%= cat.food %> 
+        </h1>
+        <h2>
+            Age: <%= cat.age %> 
+        </h2>
+    <% } else { %>
+        <h2>
+            There is no user with that id
+        </h2>
+    <% } %>
+        <h2>The sleeping spots</h2>
+    <% for( let j=0; j<cat.sleepingspots.length; j++ ){ %>
+            
+        <p>
+            <%= cat.sleepingspots[j] %>
+        </p>
+    <% } %>
+
+</body>
+</html>
